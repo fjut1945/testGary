@@ -10,7 +10,7 @@ AS
 BEGIN
     DECLARE @DealerPrice money;
     DECLARE @DealerDiscount money;
-
+fgfg
     SET @DealerDiscount = 0.60  -- 60% of list price
 
     SELECT @DealerPrice = plph.[ListPrice] * @DealerDiscount 
