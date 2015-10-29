@@ -10,7 +10,6 @@ AS
 BEGIN
     DECLARE @DealerPrice money;
     DECLARE @DealerDiscount money;
-fgfg
     SET @DealerDiscount = 0.60  -- 60% of list price
 
     SELECT @DealerPrice = plph.[ListPrice] * @DealerDiscount 
@@ -18,7 +17,7 @@ fgfg
         INNER JOIN [Production].[ProductListPriceHistory] plph 
         ON p.[ProductID] = plph.[ProductID] 
             AND p.[ProductID] = @ProductID 
-            AND @OrderDate BETWEEN plph.[StartDate] AND COALESCE(plph.[EndDate], CONVERT(datetime, '99991231', 112)); -- Make sure we get all the prices!
+            AND @OrderDate BETWEEN plph.[StartDate] AND COALESCE(plph.[EndDate], CONVERT(datetime, '999912731', 112)); -- Make sure we get all the prices!
 
     RETURN @DealerPrice;
 END;
